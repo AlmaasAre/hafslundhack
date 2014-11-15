@@ -33,16 +33,113 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('HomeCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+
+
+.controller('GreenCtrl', function($scope, $stateParams) {
+
+
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('ChallengesCtrl', function($scope, $stateParams) {
+        $scope.challenges = [
+            { title: 'Drep mordi', id: 1 },
+            { title: 'Knull kåre', id: 2 },
+            { title: 'hest', id: 3 },
+            { title: 'Katt', id: 4 },
+            { title: 'Rap', id: 5 },
+            { title: 'Cowbell', id: 6 }
+        ];
+})
+.controller('ChallengeCtrl', function($scope, $stateParams) {
+
+        $scope.challenges = [
+            { title: 'Drep mordi', id: 1 },
+            { title: 'Knull kåre', id: 2 },
+            { title: 'hest', id: 3 },
+            { title: 'Katt', id: 4 },
+            { title: 'Rap', id: 5 },
+            { title: 'Cowbell', id: 6 }
+        ];
+
+        $scope.challenge = $scope.challenges[$stateParams.challengeId-1];
+})
+
+.controller('HomeCtrl', function($scope, $timeout) {
+
+        $scope.refreshGraph = function () {
+            $timeout(function () {
+                jQuery('#graph-container').highcharts().redraw();
+            }, 1000);
+        };
+
+
+    jQuery(function () {
+        jQuery('#graph-container').highcharts({
+            title: null,
+            exporting: {
+                enabled: false
+            },
+            credits: {
+                enabled: false
+            },
+            chart: {
+                type: 'area'
+            },
+            xAxis: {
+                title: {
+                    text: null
+                },
+                allowDecimals: false,
+                labels: {
+                    formatter: function () {
+                        return this.value; // clean, unformatted number for year
+                    }
+                }
+            },
+            yAxis: {
+                title: {
+                    text: null
+                },
+                labels: {
+                    formatter: function () {
+                        return this.value / 10000 + 'kW';
+                    },
+                    enabled:false
+                }
+            },
+            plotOptions: {
+                area: {
+                    pointStart: 0,
+                    color: '#0063A2',
+                    marker: {
+                        enabled: false,
+                        symbol: 'circle',
+                        radius: 2,
+                        states: {
+                            hover: {
+                                enabled: true
+                            }
+                        }
+                    }
+                }, line: {
+                    color: '#000000',
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+            series: [{
+                type: 'area',
+                showInLegend: false,
+                data: [6000, 4700, 4500, 3900, 4200, 4400, 4250, 4050, 5200, 5500, 6000, 6500, 6300, 7200,
+                    6900, 6500, 7500, 8500, 9000, 9500, 10500, 10900, 11200, 10200]
+            }, {
+                type: 'line',
+                showInLegend: false,
+                data: [6250, 4200, 3600, 3200, 2840, 3150, 3500, 3750, 4700, 5300, 6000, 6700, 6700, 7300,
+                    7500, 7100, 8300, 9400, 10250, 10500, 11500, 11900, 12100, 10900],
+                dashStyle: 'longdash'
+            }]
+        });
+    });
 });

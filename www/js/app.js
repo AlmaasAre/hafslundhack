@@ -21,8 +21,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
 
+   $stateProvider
     .state('app', {
       url: "/app",
       abstract: true,
@@ -30,11 +30,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       controller: 'AppCtrl'
     })
 
-    .state('app.browse', {
-      url: "/browse",
+    .state('app.usage', {
+      url: "/usage",
       views: {
         'menuContent' :{
-          templateUrl: "templates/browse.html"
+          templateUrl: "templates/usage.html"
         }
       }
     })
@@ -48,15 +48,36 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
-    .state('app.single', {
-      url: "/playlists/:playlistId",
+      .state('app.challenges', {
+          url: "/challenges",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/challenges.html",
+                  controller: 'ChallengesCtrl'
+              }
+          }
+      })
+
+    .state('app.challenge', {
+      url: "/challenges/:challengeId",
       views: {
         'menuContent' :{
-          templateUrl: "templates/playlist.html",
-          controller: 'PlaylistCtrl'
+          templateUrl: "templates/challenge.html",
+          controller: 'ChallengeCtrl'
         }
       }
-    });
+    })
+
+      .state('app.green', {
+          url: "/green",
+          views: {
+              'menuContent' :{
+                  templateUrl: "templates/green.html",
+                  controller: 'GreenCtrl'
+              }
+          }
+      });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
 });

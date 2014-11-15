@@ -1,30 +1,38 @@
 <ion-side-menus>
 
-  <ion-side-menu-content>
-    <ion-nav-bar class="bar-stable nav-title-slide-ios7">
-      <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>
+  <ion-side-menu-content edge-drag-threshold="50">
+    <ion-nav-bar class="bar-stable nav-title-slide-android bar-positive">
+      <ion-nav-back-button class="button-clear"><i class="icon ion-android-arrow-back"></i> Back</ion-nav-back-button>
     </ion-nav-bar>
-    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+      <!-- animation="slide-left-right"-->
   </ion-side-menu-content>
 
   <ion-side-menu side="left">
-    <header class="bar bar-header bar-stable">
-      <h1 class="title">Left</h1>
+    <header class="bar bar-header bar-stable bar-positive">
+        <img src="../img/logo-hafslund-white.png" class="hafslund-img" alt=""/>
+      <!--<h1 class="title">Hafslund</h1>-->
     </header>
     <ion-content class="has-header">
       <ion-list>
         <ion-item nav-clear ng-click="homeModal()">
             <i class="icon ion-home"></i> Hus: Passiv
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/search">
-          Search
+        <ion-item nav-clear menu-close href="#/app/home">
+            <i class="icon ion-home"></i> Hjem
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/browse">
-          Browse
+        <ion-item nav-clear menu-close href="#/app/usage">
+            <i class="icon ion-stats-bars"></i> Bruk
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/playlists">
-          Playlists
-        </ion-item>
+          <ion-item nav-clear menu-close href="#/app/challenges">
+              <i class="icon ion-flag"></i> Utfordringer
+          </ion-item>
+          <ion-item nav-clear menu-close href="#/app/analysis">
+              <i class="icon ion-pie-graph"></i> Analyse
+          </ion-item>
+          <ion-item nav-clear menu-close href="#/app/green">
+              <i class="icon ion-battery-charging"></i> Grønn
+          </ion-item>
       </ion-list>
     </ion-content>
   </ion-side-menu>

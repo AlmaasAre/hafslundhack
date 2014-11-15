@@ -1,12 +1,30 @@
-<ion-view title="Home">
-    <ion-nav-buttons side="left">
+<ion-view title="Hjem">
+    <ion-nav-buttons side="left" >
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
     <ion-content class="has-header">
+        <ion-refresher
+                pulling-text="Pull to take A SHIT!..."
+                on-refresh="refreshGraph()">
+        </ion-refresher>
+        <div class="shitwrapper">
+
+            <div id="graph-container">
+
+            </div>
+
+        </div>
+
         <ion-list>
-            <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
-                {{playlist.title}}
-            </ion-item>
+            <div class="card">
+                <h1>HEY HJO!o!</h1>
+                <h5>GRAPH HERE PLZ</h5>
+            </div>
+
+            <div class="card">
+                <h1>HEY HJO!o!</h1>
+                <p>Got some advice fOR YA!</p>
+            </div>
         </ion-list>
     </ion-content>
 </ion-view>
