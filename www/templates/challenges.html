@@ -1,14 +1,30 @@
-<ion-view title="Utfordringer">
+<ion-view title="Mine utfordringer">
     <ion-nav-buttons side="left">
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
     <ion-content class="has-header">
-        <ion-list can-swipe="true">
-            <ion-list-item>
-                <div class="card challengecard" ng-repeat="challenge in challenges" href="#/app/challenges/{{challenge.id}}" can-swipe="true">
-                    <h1>{{challenge.title}}</h1>
-                </div>
-            </ion-list-item>
+        <ion-list>
+            <ion-item ng-href="{{challenge.href}}" ng-repeat="challenge in challenges">
+                <td-cards>
+                    <td-card on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)">
+                        <div class="image">
+                            <h1><i class="ion-icon {{challenge.icon}}"></i> {{challenge.title}}</h1>
+
+                            <div class="description">
+                                <p ng-bind-html="challenge.ingress"></p>
+                            </div>
+                            <div style="
+                                text-align: center;
+                                margin-top: 20px;
+                            "><i class="ion-icon ion-more" style="
+                                text-align: center;
+                                margin-top: 20px;
+                                font-size: 2em;
+                            "></i></div>
+                        </div>
+                    </td-card>
+                </td-cards>
+            </ion-item>
         </ion-list>
     </ion-content>
 </ion-view>

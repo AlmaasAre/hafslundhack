@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tinderCards'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -34,10 +34,20 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/usage",
       views: {
         'menuContent' :{
-          templateUrl: "templates/usage.html"
+          templateUrl: "templates/usage.html",
+          controller:'UsageController'
         }
       }
     })
+   .state('app.yes', {
+       url: "/yes",
+       views: {
+           'menuContent' :{
+               templateUrl: "templates/yes.html",
+               controller:'YesCtrl'
+           }
+       }
+   })
     .state('app.home', {
       url: "/home",
       views: {
@@ -67,6 +77,26 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+
+       .state('app.tips', {
+           url: "/tips",
+           views: {
+               'menuContent' :{
+                   templateUrl: "templates/tips.html",
+                   controller: 'TipsCtrl'
+               }
+           }
+       })
+
+       .state('app.tip', {
+           url: "/tips/:tipId",
+           views: {
+               'menuContent' :{
+                   templateUrl: "templates/tip.html",
+                   controller: 'TipCtrl'
+               }
+           }
+       })
 
       .state('app.green', {
           url: "/green",

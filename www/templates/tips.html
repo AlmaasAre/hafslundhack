@@ -1,0 +1,30 @@
+<ion-view title="Råd">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <ion-list can-swipe="true">
+            <ion-item ng-href="{{tip.href}}" ng-repeat="tip in tips">
+                <td-cards>
+                    <td-card on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)">
+                        <div class="image">
+                            <h1><i class="ion-icon {{tip.icon}}"></i> {{tip.title}}</h1>
+
+                            <div class="description">
+                                <p ng-bind-html="tip.ingress"></p>
+                            </div>
+                            <div style="
+                                text-align: center;
+                                margin-top: 20px;
+                            "><i class="ion-icon ion-more" style="
+                                text-align: center;
+                                margin-top: 20px;
+                                font-size: 2em;
+                            "></i></div>
+                        </div>
+                    </td-card>
+                </td-cards>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

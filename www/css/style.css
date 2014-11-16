@@ -7,6 +7,194 @@
     height: 28px;
 }
 
-.challengecard{
+.challengecard, .tipscard{
     margin-bottom:15px;
+}
+
+.item{
+    overflow: visible;
+    border-width: 0px;
+}
+
+.infobutton{
+    border:0;
+}
+
+.ion-android-information{
+    font-size: 24px;
+}
+
+li.liststyle{
+    list-style: initial;
+    margin-left: 18px;
+}
+
+.horsecard{
+    margin-left: 17%;
+    width: 210px;
+    font-size: 203px;
+}
+
+.horseinner{
+    font-size:42px;
+}
+
+.ion-social-googleplus{
+    float:right;
+}
+
+.item.item-text-wrap.horseinner > i {
+    margin-left: 11px;
+    margin-right: 11px;
+}
+
+/** Add animation *//*
+.ng-enter.ng-enter-active,
+.ng-leave {
+    opacity: 1;
+    -webkit-transition: opacity 300ms linear;
+    -moz-transition: opacity 300ms linear;
+    transition: opacity 300ms linear;
+}
+
+*//* Remove animation *//*
+.ng-leave.ng-leave-active,
+.ng-enter {
+    opacity: 0;
+    -webkit-transition: opacity 300ms linear;
+    -moz-transition: opacity 300ms linear;
+    transition: opacity 300ms linear;
+}*/
+
+.bar-positive .button{
+    border:0;
+}
+
+/*
+Pages
+*/
+.challenge-content{
+    padding: 24px;
+}
+
+.challenge-title{
+    padding: 12px;
+    text-align: center;
+}
+
+/*.shit-wrapper{
+    height:180px;
+}
+
+#highcharts-container{
+    max-height:280px;
+}*/
+
+.description > p{
+    white-space:initial;
+}
+
+/*
+
+Cards
+
+*/
+
+hr{
+    color: white;
+}
+
+p{
+    color: black !important;
+}
+
+.swipe-card{
+    /*padding: 12px;*/
+    isplay: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    /*padding: 5px;*/
+    width: 100%;
+    padding: 21px !important;
+    padding-bottom: 0 !important;
+}
+
+.image > h1{
+    white-space: initial;
+    font-size: 20px;
+}
+
+.image{
+    width:100%;
+}
+
+td-cards {
+    display: block;
+}
+
+td-card {
+    position: relative;
+    left: 41%;
+    /*margin-top: 80px;*/
+    /*margin-bottom: 40px;*/
+    margin-left: -125px;
+    width: 331px;
+    height: 170px;
+    /*border: 1px solid #999;*/
+    box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.34);
+    border-radius: 0;
+    overflow: hidden;
+}
+/*
+td-card.card-0 {
+  -webkit-transform: translate3d(0, 0px, 0);
+  transform: translate3d(0, 0px, 0);
+  top: 0px;
+  z-index: 10;
+}
+td-card.card-1 {
+  -webkit-transform: translate3d(0, 4px, 0);
+  transform: translate3d(0, 4px, 0);
+  z-index: 9;
+}
+td-card.card-2 {
+  -webkit-transform: translate3d(0, 8px, 0);
+  transform: translate3d(0, 8px, 0);
+  z-index: 8;
+}
+*/
+
+td-card .image {
+    position: relative;
+}
+
+td-card img {
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+.yes-text {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 30px;
+    color: rgb(111, 250, 111);
+    opacity: 0;
+}
+.no-text {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: rgb(255, 115, 115);
+    opacity: 0;
+}
+
+.fade {
+    -webkit-transition: 0.2s opacity linear;
+    transition: 0.2s opacity linear;
+    opacity: 0
 }
