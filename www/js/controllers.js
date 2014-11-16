@@ -12,7 +12,7 @@ angular.module('starter.controllers', [])
             description: '<span>Montering av sparedusj er et sparetiltak som har meget god lønnsomhet. Tommelfinger-regelen sier: <br/>'
             +'Skifter du til sparedusj, halverer du dusjkostnadene'
             +'dine. Eldre dusjer bruker opptil 24 liter per minutt –'
-            +'nye sparedusjer 6-10 liter i minuttet.</span>',
+            +' nye sparedusjer bruker 6-10 liter i minuttet.</span>',
             ingress:'Montering av sparedusj er et godt tiltak.',
             option:'Kjøp sparedusj',
             choices: ['Jeg vil gjøre dette', 'Gjør det allerede'],
@@ -27,9 +27,9 @@ angular.module('starter.controllers', [])
             description: '<span>Nattsenking av temperaturen i boligen '
             +'er ett av de enkle sparetiltakene som gir størst effekt.'
             +'For hver grad du senker temperaturen sparer du ca 5%'
-            +'på strømutgiftene til oppvarming!',
+            +'på strømutgiftene til oppvarming!</span>',
             ingress:'Nattsenking av temperaturen i boligen er ett av de enkle sparetiltakene som gir størst effekt.',
-            option:'Senk nattemperaturen de neste 7 dagene</span>',
+            option:'Senk nattemperaturen de neste 7 dagene',
             choices: ['Jeg vil gjøre dette', 'Gjør det allerede'],
             href: '#/app/challenges/2',
             icon:'ion-android-lightbulb',
